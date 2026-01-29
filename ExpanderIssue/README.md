@@ -11,8 +11,8 @@ This sample reproduces a crash that occurs when the app is start without debuggo
 ## Reproduction steps
 
 1. Build the solution in `Debug` or `Release` configuration.
-2. Run the app from Visual Studio — it will start and the UI with nested expanders appears to work.
-3. Start the app (without debugging).
+2. Run the app from Visual Studio â€” it will start and the UI with nested expanders appears to work.
+3. Start without debugging.
 4. The app crashes when clicking the expander.
 
 ## Expected behavior
@@ -28,12 +28,7 @@ When a nested `CommunityToolkit.WinUI.Controls.SettingsExpander` is present, the
 - Avoid nesting `CommunityToolkit.WinUI.Controls.SettingsExpander` controls. Consider alternative layouts (for example, using `StackPanel`, `Grid`, `ItemsControl`, or a custom toggle control).
 - Run the app under the Visual Studio debugger while investigating (not a permanent solution).
 
-## Environment
-
-- Target framework: .NET 8
-- UI framework: WinUI / Windows App SDK
-
-## Machine information (paste your values here)
+## Environment / Machine information
 
 Provide the machine and environment details used when reproducing the crash. Replace the example values with your actual information.
 
@@ -42,21 +37,3 @@ Provide the machine and environment details used when reproducing the crash. Rep
 - CommunityToolkit.WinUI.Controls.SettingsControls: `8.2.251219`
 - Windows App SDK version: `1.8.260101001`
 - Visual Studio: `Visual Studio 2026`
-
-## How to build and test
-
-1. Open the solution in Visual Studio with the Windows App SDK workloads installed.
-2. Build the `ExpanderIssue` project.
-3. To reproduce the crash, close Visual Studio and run the produced `.exe` (or packaged app) from File Explorer.
-
-## Reporting
-
-If you plan to file a bug with the WinUI / Windows App SDK team, include:
-
-- Reproduction steps (above)
-- The built binary or clear instructions to build from this repo
-- OS version, .NET runtime version, and Windows App SDK version used when reproducing
-
----
-
-This repository is a minimal reproduction to aid debugging of a platform issue involving nested `CommunityToolkit.WinUI.Controls.SettingsExpander` controls.
