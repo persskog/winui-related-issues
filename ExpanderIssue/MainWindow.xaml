@@ -1,0 +1,50 @@
+<Window x:Class="ExpanderIssue.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:ExpanderIssue"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:windev="using:Windows.Devices.Enumeration"
+        xmlns:wctui="using:CommunityToolkit.WinUI"
+        xmlns:wctctrls="using:CommunityToolkit.WinUI.Controls"
+        mc:Ignorable="d"
+        Title="Expander inside an expander issue">
+
+    <Window.SystemBackdrop>
+        <MicaBackdrop />
+    </Window.SystemBackdrop>
+
+    <Grid>
+        <ItemsControl ItemsSource="{x:Bind Microphones}"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Center"
+                      MinWidth="1000">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate x:DataType="windev:DeviceInformation">
+
+                    <!--
+                    FIRST EXPANDER
+                    -->
+                    <wctctrls:SettingsExpander Header="Crash or no problemos? (Click me)" HeaderIcon="{wctui:FontIcon Glyph=&#xEBE8;}">
+
+                        <wctctrls:SettingsExpander.Items>
+                            <wctctrls:SettingsCard Header="{x:Bind Name}" HeaderIcon="{wctui:FontIcon Glyph=&#xE720;}"/>
+
+                            <!--
+                            SECOND EXPANDER within a expander
+                            -->
+                            <wctctrls:SettingsExpander Header="Lucky you"
+                                                       HeaderIcon="{wctui:FontIcon Glyph=&#xE8E1;}">
+                                <wctctrls:SettingsExpander.Items>
+                                    <wctctrls:SettingsCard HeaderIcon="{wctui:FontIcon Glyph=&#xED54;}" Header="Still alive, nice!"/>
+                                </wctctrls:SettingsExpander.Items>
+                            </wctctrls:SettingsExpander>
+
+                        </wctctrls:SettingsExpander.Items>
+ 
+                    </wctctrls:SettingsExpander>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</Window>
