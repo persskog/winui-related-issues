@@ -22,17 +22,13 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate x:DataType="windev:DeviceInformation">
 
-                    <!--
-                    FIRST EXPANDER
-                    -->
-                    <wctctrls:SettingsExpander Header="Crash or no problemos? (Click me)" HeaderIcon="{wctui:FontIcon Glyph=&#xEBE8;}">
+                    <!-- Crash version -->
+                    
+                    <!--<wctctrls:SettingsExpander Header="Crash or no problemos? (Click me)" HeaderIcon="{wctui:FontIcon Glyph=&#xEBE8;}">
 
                         <wctctrls:SettingsExpander.Items>
                             <wctctrls:SettingsCard Header="{x:Bind Name}" HeaderIcon="{wctui:FontIcon Glyph=&#xE720;}"/>
 
-                            <!--
-                            SECOND EXPANDER within a expander
-                            -->
                             <wctctrls:SettingsExpander Header="Lucky you"
                                                        HeaderIcon="{wctui:FontIcon Glyph=&#xE8E1;}">
                                 <wctctrls:SettingsExpander.Items>
@@ -41,7 +37,28 @@
                             </wctctrls:SettingsExpander>
 
                         </wctctrls:SettingsExpander.Items>
- 
+                        
+                     </wctctrls:SettingsExpander>-->
+
+                    <!-- Other version -->
+                    <wctctrls:SettingsExpander Header="Crash or no problemos? (Click me)" HeaderIcon="{wctui:FontIcon Glyph=&#xEBE8;}">
+
+                        <wctctrls:SettingsExpander.Items>
+                            <wctctrls:SettingsCard Header="{x:Bind Name}" HeaderIcon="{wctui:FontIcon Glyph=&#xE720;}"/>
+
+                            <wctctrls:SettingsCard ContentAlignment="Left"
+                                                   HorizontalContentAlignment="Stretch">
+                                
+                                <wctctrls:SettingsExpander Header="Lucky you" HeaderIcon="{wctui:FontIcon Glyph=&#xE8E1;}">
+                                    <wctctrls:SettingsExpander.Items>
+                                        <wctctrls:SettingsCard HeaderIcon="{wctui:FontIcon Glyph=&#xED54;}" Header="Still alive, nice!"/>
+                                    </wctctrls:SettingsExpander.Items>
+                                </wctctrls:SettingsExpander>
+                                
+                            </wctctrls:SettingsCard>
+
+                        </wctctrls:SettingsExpander.Items>
+
                     </wctctrls:SettingsExpander>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
